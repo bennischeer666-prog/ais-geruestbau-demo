@@ -14,20 +14,39 @@
 
 <!-- Header (Premium + Mobile Menü) -->
 <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/55 backdrop-blur-lg border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-    <a href="#top" class="flex items-center gap-4 min-w-0">
-  <img src="assets/logo-ais.png" alt="AIS Gerüstbau Logo" class="h-12 w-auto shrink-0" />
+  <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-4">
 
- <div class="min-w-0 flex items-center">
-  <div class="text-lg md:text-xl font-semibold text-slate-100 flex gap-6 items-center whitespace-nowrap">
-    <span><span class="text-[#d72626] font-extrabold text-2xl md:text-3xl">A</span>rbeitsgerüste</span>
-    <span><span class="text-[#d72626] font-extrabold text-2xl md:text-3xl">I</span>ndustriegerüste</span>
-    <span><span class="text-[#d72626] font-extrabold text-2xl md:text-3xl">S</span>chutzgerüste</span>
-  </div>
-</div>
+    <!-- Top Row: Logo + Burger (Mobile) -->
+    <div class="flex items-center justify-between md:justify-start gap-4">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/logo-ais.png" alt="AIS Gerüstbau Logo" class="h-12 w-auto shrink-0" />
+      </a>
 
+      <!-- Burger Button (nur Mobile) -->
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-white/15 hover:border-amber-300/60" aria-label="Menü öffnen">
+        <span class="text-xl">☰</span>
+      </button>
+    </div>
 
+    <!-- MOBILE: große AIS-Zeile eigene Zeile -->
+    <div class="md:hidden">
+      <div class="text-lg font-semibold text-slate-100 flex gap-4 items-center whitespace-nowrap overflow-x-auto pb-1">
+        <span><span class="text-[#d72626] font-extrabold text-2xl">A</span>rbeitsgerüste</span>
+        <span><span class="text-[#d72626] font-extrabold text-2xl">I</span>ndustriegerüste</span>
+        <span><span class="text-[#d72626] font-extrabold text-2xl">S</span>chutzgerüste</span>
+      </div>
+    </div>
 
+    <!-- DESKTOP: linker Bereich (Logo + AIS-Zeile) -->
+    <div class="hidden md:flex items-center gap-6">
+      <div class="text-xl font-semibold text-slate-100 flex gap-6 items-center whitespace-nowrap">
+        <span><span class="text-[#d72626] font-extrabold text-3xl">A</span>rbeitsgerüste</span>
+        <span><span class="text-[#d72626] font-extrabold text-3xl">I</span>ndustriegerüste</span>
+        <span><span class="text-[#d72626] font-extrabold text-3xl">S</span>chutzgerüste</span>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-8 font-medium text-slate-200 whitespace-nowrap">
       <a href="#leistungen" class="hover:text-amber-300">Leistungen</a>
       <a href="#ablauf" class="hover:text-amber-300">Ablauf</a>
@@ -36,6 +55,7 @@
       <a href="#kontakt" class="hover:text-amber-300">Kontakt</a>
     </nav>
 
+    <!-- Desktop CTA -->
     <div class="hidden md:flex items-center gap-3 whitespace-nowrap">
       <a href="tel:02099567022" class="px-4 py-2 rounded-xl border border-white/15 hover:border-amber-300/60 hover:text-amber-200">
         0209 / 9567022
@@ -45,9 +65,6 @@
       </a>
     </div>
 
-    <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-white/15 hover:border-amber-300/60" aria-label="Menü öffnen">
-      <span class="text-xl">☰</span>
-    </button>
   </div>
 
   <!-- Mobile Menu -->
@@ -65,6 +82,7 @@
     </div>
   </div>
 </header>
+
 
 <!-- Hero (Video-Hintergrund + Mobile-Fallback) -->
 <section class="relative overflow-hidden pt-24">
