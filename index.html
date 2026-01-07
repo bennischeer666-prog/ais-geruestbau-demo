@@ -70,16 +70,42 @@
 
 <!-- Hero (Video-Hintergrund + Mobile-Fallback) -->
 <section class="relative overflow-hidden pt-24">
+  <!-- Video: wird auf Mobile ausgeblendet -->
+  <video
+    class="absolute inset-0 w-full h-full object-cover hidden md:block"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="assets/hero-poster.jpg"
+  >
+    <source src="assets/hero.webm" type="video/webm" />
+    <source src="assets/hero.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Mobile-Fallback Bild -->
+  <img
+    src="assets/hero-mobile.jpg"
+    alt="Gerüstbau im Einsatz"
+    class="absolute inset-0 w-full h-full object-cover md:hidden"
+    loading="eager"
+  />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-900/85 to-blue-700/60"></div>
 
   <!-- Inhalt -->
   <div class="relative">
     <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 text-white">
       <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Ihr Partner für sicheren Gerüstbau in NRW</h1>
       <p class="text-lg md:text-xl mb-8 max-w-2xl">Arbeitsgerüste · Industrieanlagen · Spezialkonstruktionen · Schutz- & Fangnetze</p>
+
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="#kontakt" class="bg-white text-blue-900 px-6 py-3 rounded-xl font-semibold text-center">Kostenlos anfragen</a>
         <a href="#leistungen" class="border border-white px-6 py-3 rounded-xl text-center">Unsere Leistungen</a>
       </div>
+
       <div class="mt-8 flex flex-col sm:flex-row gap-3 text-sm opacity-95">
         <a href="tel:02099567022" class="inline-flex items-center justify-center rounded-lg bg-white/10 px-4 py-2 hover:bg-white/20">📞 0209 / 9567022</a>
         <a href="mailto:ais-geruestbau@web.de" class="inline-flex items-center justify-center rounded-lg bg-white/10 px-4 py-2 hover:bg-white/20">✉️ ais-geruestbau@web.de</a>
@@ -87,6 +113,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- Trust (Premium) -->
 <section class="py-12 bg-gradient-to-b from-slate-950 to-slate-900 border-y border-white/10">
