@@ -13,16 +13,15 @@
 <body class="bg-slate-950 text-slate-100 selection:bg-amber-400/30 selection:text-white">
 
 <!-- Header (stabil + sauber) -->
-<!-- Header (clean + centered AIS line) -->
 <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/70 backdrop-blur-md border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
 
-    <!-- Left: Logo -->
+    <!-- Logo -->
     <a href="#top" class="shrink-0 flex items-center">
       <img src="assets/logo-ais.png" alt="AIS Gerüstbau Logo" class="h-12 w-auto" />
     </a>
 
-    <!-- Right: Nav + CTA (Desktop) -->
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center gap-8 font-medium text-slate-200 whitespace-nowrap">
       <a href="#leistungen" class="hover:text-amber-300">Leistungen</a>
       <a href="#ablauf" class="hover:text-amber-300">Ablauf</a>
@@ -31,6 +30,7 @@
       <a href="#kontakt" class="hover:text-amber-300">Kontakt</a>
     </nav>
 
+    <!-- Desktop CTA -->
     <div class="hidden md:flex items-center gap-3 shrink-0">
       <a href="tel:02099567022" class="px-4 py-2 rounded-xl border border-white/15 hover:border-amber-300/60 hover:text-amber-200">
         0209 / 9567022
@@ -39,6 +39,27 @@
         Angebot anfragen
       </a>
     </div>
+
+    <!-- Mobile Burger (IMMER sichtbar auf Mobile) -->
+    <button
+      id="menuBtn"
+      class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-white/15 hover:border-amber-300/60 shrink-0"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <span class="text-xl leading-none">☰</span>
+    </button>
+  </div>
+
+  <!-- Mobile AIS line: nicht abschneiden, sondern horizontal scrollen -->
+  <div class="md:hidden px-4 pb-3">
+    <div class="text-sm font-medium text-slate-200 flex items-center gap-6 whitespace-nowrap overflow-x-auto [-webkit-overflow-scrolling:touch]">
+      <span><span class="text-[#d72626] font-extrabold text-lg">A</span>rbeitsgerüste</span>
+      <span><span class="text-[#d72626] font-extrabold text-lg">I</span>ndustriegerüste</span>
+      <span><span class="text-[#d72626] font-extrabold text-lg">S</span>chutzgerüste</span>
+    </div>
+  </div>
 
   <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-slate-950/95">
@@ -55,6 +76,7 @@
     </div>
   </div>
 </header>
+
 
 <!-- Hero (Video-Hintergrund + Mobile-Fallback) -->
 <section class="relative overflow-hidden pt-24 min-h-[90vh]">
@@ -683,7 +705,26 @@
       a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
   });
+</script><script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (!menuBtn || !mobileMenu) return;
+
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
 </script>
+
 
 </body>
 </html>
