@@ -8,45 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-  body{font-family:Inter,system-ui,sans-serif}
-
-  /* Flip cards */
-  .flip-card { perspective: 1200px; }
-  .flip-inner {
-    position: relative;
-    min-height: 260px;              /* sorgt dafür, dass nichts "zusammensackt" */
-    transform-style: preserve-3d;
-    transition: transform 700ms cubic-bezier(.2,.8,.2,1), border-color 200ms ease;
-    border-radius: 1.5rem;
-    border: 1px solid rgba(255,255,255,.10);
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 20px 60px rgba(0,0,0,.35);
-    overflow: hidden;
-  }
-  .flip-face{
-    position:absolute;
-    inset:0;
-    backface-visibility:hidden;
-    -webkit-backface-visibility:hidden;
-  }
-  .flip-back{ transform: rotateY(180deg); }
-
-  /* Desktop: hover flip */
-  @media (hover:hover) and (pointer:fine){
-    .flip-card:hover .flip-inner { transform: rotateY(180deg); }
-  }
-
-  /* Gold border on hover/active */
-  .flip-card:hover .flip-inner,
-  .flip-card.is-flipped .flip-inner{
-    border-color: rgba(252,211,77,.55);
-  }
-
-  /* Mobile: tap flip */
-  .flip-card.is-flipped .flip-inner{ transform: rotateY(180deg); }
-</style>
-
+  <style> body{font-family:Inter,system-ui,sans-serif} </style>
 </head>
 <body class="bg-slate-950 text-slate-100 selection:bg-amber-400/30 selection:text-white">
 
@@ -157,152 +119,252 @@
 </section>
 
 
-<!-- Trust (Flip Cards) -->
-<section class="py-16 bg-gradient-to-b from-slate-950 to-slate-900 border-y border-white/10">
+<!-- Trust (Flip Cards – Premium) -->
+<section class="py-14 bg-gradient-to-b from-slate-950 to-slate-900 border-y border-white/10">
   <div class="max-w-7xl mx-auto px-4">
-
-    <div class="mb-10">
-      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Warum AIS</h2>
-      <p class="text-slate-300 mt-2">Kurz & klar – Details per Hover (Desktop) oder Tap (Mobile).</p>
+    <div class="flex items-end justify-between gap-6 mb-8">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Warum AIS</h2>
+        <p class="text-slate-300 mt-2 max-w-2xl">Kurz & klar – Details per Hover (Desktop) oder Tap (Mobile).</p>
+      </div>
     </div>
 
-    <!-- 2 Spalten wie auf deinem Foto -->
-    <div class="grid md:grid-cols-2 gap-6">
-
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Card 1 -->
-      <div class="flip-card" data-flip>
-        <div class="flip-inner p-8">
-          <!-- Front -->
-          <div class="flip-face flip-front flex flex-col">
-            <div class="inline-flex self-start px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-200 text-xs font-semibold">
-              Erfahrung
-            </div>
-
-            <div class="mt-6 text-5xl font-extrabold text-amber-300 leading-none">25+</div>
-            <div class="mt-2 text-2xl font-extrabold">Jahre</div>
-            <div class="mt-2 text-slate-300">Erfahrung in NRW</div>
-
-            <div class="mt-auto pt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
+      <button type="button" class="flip-card text-left" aria-label="25+ Jahre Erfahrung">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="badge">Erfahrung</div>
+            <div class="num">25+</div>
+            <div class="title">Jahre</div>
+            <div class="sub">Erfahrung in NRW</div>
           </div>
-
-          <!-- Back -->
-          <div class="flip-face flip-back flex flex-col p-8">
-            <div class="text-xl font-extrabold text-white">Erfahrung, die sitzt.</div>
-
-            <ul class="mt-4 space-y-3 text-slate-100">
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Industrie, Gewerbe & Privat</span></li>
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Planung + saubere Logistik</span></li>
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Termintreue & Sicherheit im Fokus</span></li>
+          <div class="flip-back">
+            <div class="back-title">Erfahrung, die sitzt.</div>
+            <ul class="back-list">
+              <li>Industrie, Gewerbe & Privat</li>
+              <li>Planung + saubere Logistik</li>
+              <li>Termintreue & Sicherheit im Fokus</li>
             </ul>
-
-            <div class="mt-auto pt-6">
-              <div class="h-px bg-white/10"></div>
-              <div class="pt-3 text-sm text-slate-200/80">Tipp: Details jederzeit im Gespräch.</div>
-            </div>
+            <div class="back-hint">Tipp: Details jederzeit im Gespräch.</div>
           </div>
         </div>
-      </div>
+      </button>
 
       <!-- Card 2 -->
-      <div class="flip-card" data-flip>
-        <div class="flip-inner p-8">
-          <div class="flip-face flip-front flex flex-col">
-            <div class="inline-flex self-start px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-200 text-xs font-semibold">
-              Kapazität
-            </div>
-
-            <div class="mt-6 text-5xl font-extrabold text-amber-300 leading-none">50.000 m²</div>
-            <div class="mt-2 text-2xl font-extrabold">Material</div>
-            <div class="mt-2 text-slate-300">kurzfristig verfügbar</div>
-
-            <div class="mt-auto pt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
+      <button type="button" class="flip-card text-left" aria-label="50.000 m² Material">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="badge">Kapazität</div>
+            <div class="num">50.000 m²</div>
+            <div class="title">Material</div>
+            <div class="sub">kurzfristig verfügbar</div>
           </div>
-
-          <div class="flip-face flip-back flex flex-col p-8">
-            <div class="text-xl font-extrabold text-white">Schnell startklar.</div>
-
-            <ul class="mt-4 space-y-3 text-slate-100">
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Große Mengen auf Lager</span></li>
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Flexible Aufbauzeiten</span></li>
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Auch für größere Projekte</span></li>
+          <div class="flip-back">
+            <div class="back-title">Schnell startklar.</div>
+            <ul class="back-list">
+              <li>Große Mengen auf Lager</li>
+              <li>Flexible Aufbauzeiten</li>
+              <li>Auch für größere Projekte</li>
             </ul>
-
-            <div class="mt-auto pt-6">
-              <div class="h-px bg-white/10"></div>
-              <div class="pt-3 text-sm text-slate-200/80">Ideal bei engen Zeitplänen.</div>
-            </div>
+            <div class="back-hint">Ideal bei engen Zeitplänen.</div>
           </div>
         </div>
-      </div>
+      </button>
 
       <!-- Card 3 -->
-      <div class="flip-card" data-flip>
-        <div class="flip-inner p-8">
-          <div class="flip-face flip-front flex flex-col">
-            <div class="inline-flex self-start px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-200 text-xs font-semibold">
-              Ausstattung
+      <button type="button" class="flip-card text-left" aria-label="Eigener Fuhrpark & Geräte">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="badge">Ausstattung</div>
+            <div class="num">Eigener</div>
+            <div class="title">Fuhrpark</div>
+            <div class="chips">
+              <span class="chip">LKW & Anhänger</span>
+              <span class="chip">Mobilkran</span>
+              <span class="chip">Hebebühnen</span>
             </div>
-
-            <div class="mt-6 text-5xl font-extrabold text-amber-300 leading-none">Eigener</div>
-            <div class="mt-2 text-2xl font-extrabold">Fuhrpark</div>
-            <div class="mt-2 text-slate-300">Kran · Hebebühnen · LKW</div>
-
-            <div class="mt-auto pt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
           </div>
-
-          <div class="flip-face flip-back flex flex-col p-8">
-            <div class="text-xl font-extrabold text-white">Mehr Kontrolle.</div>
-
-            <ul class="mt-4 space-y-3 text-slate-100">
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Weniger Abhängigkeiten</span></li>
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Schneller Aufbau & Rückbau</span></li>
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Effiziente Baustellenlogistik</span></li>
+          <div class="flip-back">
+            <div class="back-title">Mehr Kontrolle.</div>
+            <ul class="back-list">
+              <li>Weniger Abhängigkeiten</li>
+              <li>Schneller Aufbau & Rückbau</li>
+              <li>Effiziente Baustellenlogistik</li>
             </ul>
-
-            <div class="mt-auto pt-6">
-              <div class="h-px bg-white/10"></div>
-              <div class="pt-3 text-sm text-slate-200/80">Spart Zeit und Koordination.</div>
-            </div>
+            <div class="back-hint">Spart Zeit und Koordination.</div>
           </div>
         </div>
-      </div>
+      </button>
 
       <!-- Card 4 -->
-      <div class="flip-card" data-flip>
-        <div class="flip-inner p-8">
-          <div class="flip-face flip-front flex flex-col">
-            <div class="inline-flex self-start px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-200 text-xs font-semibold">
-              Qualität
+      <button type="button" class="flip-card text-left" aria-label="Meister- & Ausbildungsbetrieb">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="badge">Qualität</div>
+            <div class="num">Meister-</div>
+            <div class="title">Betrieb</div>
+            <div class="chips">
+              <span class="chip chipGold">Meisterbetrieb</span>
+              <span class="chip">Ausbildung</span>
+              <span class="chip">Innung</span>
             </div>
-
-            <div class="mt-6 text-5xl font-extrabold text-amber-300 leading-none">Meister-</div>
-            <div class="mt-2 text-2xl font-extrabold">Betrieb</div>
-            <div class="mt-2 text-slate-300">Ausbildung · Innung</div>
-
-            <div class="mt-auto pt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
           </div>
-
-          <div class="flip-face flip-back flex flex-col p-8">
-            <div class="text-xl font-extrabold text-white">Standards & Nachwuchs.</div>
-
-            <ul class="mt-4 space-y-3 text-slate-100">
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Fachlich sauber umgesetzt</span></li>
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Dokumentation & Abnahme</span></li>
-              <li class="flex gap-3"><span class="text-amber-300">•</span><span>Langfristige Qualität</span></li>
+          <div class="flip-back">
+            <div class="back-title">Standards & Nachwuchs.</div>
+            <ul class="back-list">
+              <li>Fachlich sauber umgesetzt</li>
+              <li>Dokumentation & Abnahme</li>
+              <li>Langfristige Qualität</li>
             </ul>
-
-            <div class="mt-auto pt-6">
-              <div class="h-px bg-white/10"></div>
-              <div class="pt-3 text-sm text-slate-200/80">Vertrauen durch Struktur.</div>
-            </div>
+            <div class="back-hint">Vertrauen durch Struktur.</div>
           </div>
         </div>
-      </div>
-
+      </button>
     </div>
   </div>
-</section>
 
+  <style>
+    /* Flip Cards – Tailwind-Design, aber mit CSS für 3D */
+    .flip-card{
+      width:100%;
+      border-radius:1.25rem;
+      position:relative;
+      perspective: 1200px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .flip-inner{
+      position:relative;
+      width:100%;
+      min-height: 210px;
+      transform-style: preserve-3d;
+      transition: transform .7s cubic-bezier(.2,.8,.2,1);
+    }
+    .flip-front,.flip-back{
+      position:absolute;
+      inset:0;
+      padding: 22px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+    .flip-front{
+      background:
+        radial-gradient(1200px 260px at 20% 0%, rgba(251,191,36,.10), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+    .flip-back{
+      transform: rotateY(180deg);
+      background:
+        radial-gradient(900px 260px at 30% 0%, rgba(59,130,246,.12), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+
+    /* Hover (Desktop) */
+    @media (hover:hover){
+      .flip-card:hover .flip-inner{ transform: rotateY(180deg); }
+    }
+
+    /* Active state for mobile tap */
+    .flip-card.is-flipped .flip-inner{ transform: rotateY(180deg); }
+
+    /* Motion accessibility */
+    @media (prefers-reduced-motion: reduce){
+      .flip-inner{ transition:none; }
+    }
+
+    .badge{
+      width: fit-content;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(253,230,138,.95);
+      background: rgba(251,191,36,.10);
+      border: 1px solid rgba(251,191,36,.22);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    .num{
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: rgba(253,230,138,.95);
+      margin-top: 6px;
+      line-height: 1.05;
+    }
+    .title{
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-top: 6px;
+    }
+    .sub{
+      color: rgba(226,232,240,.82);
+      margin-top: 8px;
+    }
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .chip{
+      font-size: 12px;
+      color: rgba(226,232,240,.9);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    .chipGold{
+      color: rgba(253,230,138,.95);
+      background: rgba(251,191,36,.10);
+      border-color: rgba(251,191,36,.25);
+    }
+
+    .back-title{
+      font-size: 16px;
+      font-weight: 900;
+      color:#fff;
+      margin-top: 2px;
+    }
+    .back-list{
+      margin-top: 12px;
+      color: rgba(226,232,240,.88);
+      display:grid;
+      gap:8px;
+      font-size: 14px;
+    }
+    .back-list li{
+      list-style:none;
+      padding-left: 18px;
+      position:relative;
+    }
+    .back-list li:before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color: rgba(253,230,138,.95);
+    }
+    .back-hint{
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(148,163,184,.9);
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 12px;
+    }
+  </style>
+
+  <script>
+    // Mobile: Tap toggles flip (desktop hover bleibt)
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('is-flipped');
+      });
+    });
+  </script>
+</section>
 
 <!-- Leistungen (Premium + Akkordeon) -->
 <section id="leistungen" class="py-20 bg-slate-950">
@@ -609,18 +671,24 @@
   closeBtn?.addEventListener('click', closeLightbox);
   lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
 <script>
-  document.querySelectorAll('[data-flip]').forEach(card => {
-    card.addEventListener('click', () => {
-      // Optional: nur eine Karte gleichzeitig offen
-      document.querySelectorAll('[data-flip].is-flipped').forEach(c => {
-        if (c !== card) c.classList.remove('is-flipped');
-      });
-      card.classList.toggle('is-flipped');
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (!menuBtn || !mobileMenu) return;
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Optional: schließt Menü nach Klick
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
   });
 </script>
-
 
 </body>
 </html>
