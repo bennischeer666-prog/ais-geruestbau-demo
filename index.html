@@ -22,15 +22,6 @@
       <img src="assets/logo-ais.png" alt="AIS Gerüstbau Logo" class="h-12 w-auto" />
     </a>
 
-    <!-- Center: AIS Line (no "AIS Gerüstbau" text) -->
-    <div class="hidden md:flex flex-1 justify-center">
-      <div class="text-sm font-medium text-slate-200 flex gap-5 items-center whitespace-nowrap">
-        <span><span class="text-[#d72626] font-extrabold text-lg">A</span>rbeitsgerüste</span>
-        <span><span class="text-[#d72626] font-extrabold text-lg">I</span>ndustriegerüste</span>
-        <span><span class="text-[#d72626] font-extrabold text-lg">S</span>chutzgerüste</span>
-      </div>
-    </div>
-
     <!-- Right: Nav + CTA (Desktop) -->
     <nav class="hidden md:flex items-center gap-8 font-medium text-slate-200 whitespace-nowrap">
       <a href="#leistungen" class="hover:text-amber-300">Leistungen</a>
@@ -48,24 +39,6 @@
         Angebot anfragen
       </a>
     </div>
-
-    <!-- Mobile: AIS line under logo + burger -->
-    <div class="md:hidden flex items-center gap-3">
-      <button id="menuBtn" class="inline-flex items-center justify-center w-11 h-11 rounded-xl border border-white/15 hover:border-amber-300/60" aria-label="Menü öffnen">
-        <span class="text-xl">☰</span>
-      </button>
-    </div>
-
-  </div>
-
-  <!-- Mobile: AIS line (one row, scroll if needed) -->
-  <div class="md:hidden px-4 pb-3">
-    <div class="text-xs font-medium text-slate-200 flex gap-4 items-center whitespace-nowrap overflow-x-auto">
-      <span><span class="text-[#d72626] font-extrabold">A</span>rbeitsgerüste</span>
-      <span><span class="text-[#d72626] font-extrabold">I</span>ndustriegerüste</span>
-      <span><span class="text-[#d72626] font-extrabold">S</span>chutzgerüste</span>
-    </div>
-  </div>
 
   <!-- Mobile Menu -->
   <div id="mobileMenu" class="md:hidden hidden border-t border-white/10 bg-slate-950/95">
@@ -115,37 +88,51 @@
     <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 text-white">
       <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Ihr Partner für sicheren Gerüstbau in NRW</h1>
      <!-- Subline: Desktop 1 Zeile -->
-<p class="hidden md:block text-lg md:text-xl mb-8 whitespace-nowrap">
-  Arbeitsgerüste · Industrieanlagen · Spezialkonstruktionen · Schutz- & Fangnetze
-</p>
+<!-- AIS Schlagzeile -->
+<div class="mb-4 text-lg md:text-xl font-semibold text-white flex flex-wrap gap-4">
+  <span>
+    <span class="text-[#d72626] font-extrabold text-2xl">A</span>rbeitsgerüste
+  </span>
+  <span>
+    <span class="text-[#d72626] font-extrabold text-2xl">I</span>ndustriegerüste
+  </span>
+  <span>
+    <span class="text-[#d72626] font-extrabold text-2xl">S</span>chutzgerüste
+  </span>
+</div>
 
-<!-- Subline: Mobile darf umbrechen -->
-<p class="md:hidden text-base mb-6 max-w-md">
-  Arbeitsgerüste · Industrieanlagen · Spezialkonstruktionen · Schutz- & Fangnetze
-</p>
 
-     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-  <a href="#kontakt" class="bg-white text-blue-900 px-6 py-3 rounded-xl font-semibold text-center shadow-lg shadow-black/20">
+    <!-- CTAs (nur 2) -->
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+  <a href="#kontakt"
+     class="bg-white text-blue-900 px-6 py-3 rounded-xl font-semibold text-center shadow-lg shadow-black/20">
     Kostenlos anfragen
   </a>
 
-  <a href="#leistungen" class="border border-white/70 px-6 py-3 rounded-xl text-center hover:bg-white/10">
+  <a href="#leistungen"
+     class="border border-white/70 px-6 py-3 rounded-xl text-center hover:bg-white/10">
     Unsere Leistungen
   </a>
-
-  <a href="https://wa.me/4917670513969" class="bg-amber-400 text-slate-950 px-6 py-3 rounded-xl font-semibold text-center hover:bg-amber-300">
-    WhatsApp
-  </a>
 </div>
 
-      <div class="mt-6 flex flex-col sm:flex-row gap-3 text-sm opacity-95 max-w-xl">
-  <a href="tel:02099567022" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 px-4 py-2 hover:bg-white/15 border border-white/10">
+<!-- Kontakt-Kanäle (Telefon, E-Mail, WhatsApp) -->
+<div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm opacity-95 max-w-3xl">
+  <a href="tel:02099567022"
+     class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 px-4 py-3 hover:bg-white/15 border border-white/10">
     📞 0209 / 9567022
   </a>
-  <a href="mailto:ais-geruestbau@web.de" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 px-4 py-2 hover:bg-white/15 border border-white/10">
+
+  <a href="mailto:ais-geruestbau@web.de"
+     class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 px-4 py-3 hover:bg-white/15 border border-white/10">
     ✉️ ais-geruestbau@web.de
   </a>
+
+  <a href="https://wa.me/4917670513969"
+     class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 text-slate-950 px-4 py-3 font-semibold hover:bg-amber-300">
+    💬 WhatsApp
+  </a>
 </div>
+
     </div>
   </div>
 </section>
