@@ -41,7 +41,14 @@
 
   /* Mobile: tap flip */
   .flip-card.is-flipped .flip-inner{ transform: rotateY(180deg); }
+</style> <style>
+  .flip-card{ perspective:1200px; }
+  .flip-inner{ position:relative; transform-style:preserve-3d; transition:transform .7s cubic-bezier(.2,.8,.2,1); }
+  .flip-face{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+  .flip-back{ transform:rotateY(180deg); }
+  .is-flipped .flip-inner{ transform:rotateY(180deg); }
 </style>
+
 
 </head>
 <body class="bg-slate-950 text-slate-100 selection:bg-amber-400/30 selection:text-white">
@@ -160,115 +167,140 @@
     <div class="grid md:grid-cols-4 gap-6">
       <!-- Card 1 -->
       <div class="flip-card group" data-flip>
-        <div class="flip-inner rounded-3xl border border-white/10 bg-white/5 p-7 shadow-xl">
-          <!-- Front -->
-          <div class="flip-face flip-front">
-            <div class="text-4xl font-extrabold text-amber-300">25+</div>
-            <div class="mt-2 text-xl font-bold">Jahre Erfahrung</div>
-            <div class="mt-2 text-slate-300">im Ruhrgebiet & NRW</div>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Planung</span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Montage</span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Termintreue</span>
-            </div>
-            <div class="mt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
-          </div>
-
-          <!-- Back -->
-          <div class="flip-face flip-back">
-            <div class="text-lg font-extrabold text-amber-300">Erfahrung, die Zeit spart</div>
-            <ul class="mt-3 space-y-2 text-slate-200">
-              <li>• Schnelle Baustellenlogistik</li>
-              <li>• Sicheres Arbeiten (Standards & Praxis)</li>
-              <li>• Planung passend zu Gewerbe/Industrie</li>
-            </ul>
-            <div class="mt-6 text-xs text-slate-400">Zum Zurückdrehen erneut tippen / Hover verlassen</div>
-          </div>
+        <div class="grid md:grid-cols-4 gap-6 items-stretch">
+  <!-- Card 1 -->
+  <div class="flip-card group" data-flip>
+    <div class="flip-inner rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl min-h-[260px]">
+      <!-- Front -->
+      <div class="flip-face flip-front flex flex-col">
+        <div class="inline-flex self-start px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-200 text-xs font-semibold">
+          Erfahrung
         </div>
+
+        <div class="mt-5 text-5xl font-extrabold text-amber-300 leading-none">25+</div>
+        <div class="mt-3 text-2xl font-extrabold leading-tight">Jahre</div>
+        <div class="mt-2 text-slate-300">Erfahrung in NRW</div>
+
+        <div class="mt-auto pt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="flip-card group" data-flip>
-        <div class="flip-inner rounded-3xl border border-white/10 bg-white/5 p-7 shadow-xl">
-          <div class="flip-face flip-front">
-            <div class="text-4xl font-extrabold text-amber-300">50.000 m²</div>
-            <div class="mt-2 text-xl font-bold">Gerüstmaterial</div>
-            <div class="mt-2 text-slate-300">kurzfristig verfügbar</div>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Fassade</span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Industrie</span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Sonderbau</span>
-            </div>
-            <div class="mt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
-          </div>
+      <!-- Back -->
+      <div class="flip-face flip-back flex flex-col">
+        <div class="text-xl font-extrabold text-white">Erfahrung, die sitzt.</div>
 
-          <div class="flip-face flip-back">
-            <div class="text-lg font-extrabold text-amber-300">Material + Flexibilität</div>
-            <ul class="mt-3 space-y-2 text-slate-200">
-              <li>• Kurze Reaktionszeiten</li>
-              <li>• Große Flächen & komplexe Projekte</li>
-              <li>• Saubere Taktung & Standzeiten</li>
-            </ul>
-            <div class="mt-6 text-xs text-slate-400">Erneut tippen zum Zurückdrehen</div>
-          </div>
-        </div>
-      </div>
+        <ul class="mt-4 space-y-3 text-slate-100">
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Industrie, Gewerbe & Privat</span></li>
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Planung + saubere Logistik</span></li>
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Termintreue & Sicherheit im Fokus</span></li>
+        </ul>
 
-      <!-- Card 3 -->
-      <div class="flip-card group" data-flip>
-        <div class="flip-inner rounded-3xl border border-white/10 bg-white/5 p-7 shadow-xl">
-          <div class="flip-face flip-front">
-            <div class="text-4xl font-extrabold text-amber-300">Eigener</div>
-            <div class="mt-2 text-xl font-bold">Fuhrpark & Geräte</div>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">LKW & Anhänger</span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Mobilkran</span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Hebebühnen</span>
-            </div>
-            <div class="mt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
-          </div>
-
-          <div class="flip-face flip-back">
-            <div class="text-lg font-extrabold text-amber-300">Unabhängig & schnell</div>
-            <ul class="mt-3 space-y-2 text-slate-200">
-              <li>• Weniger Fremdvergabe/Abhängigkeiten</li>
-              <li>• Schneller Aufbau & Rückbau</li>
-              <li>• Flexibel bei Terminverschiebungen</li>
-            </ul>
-            <div class="mt-6 text-xs text-slate-400">Erneut tippen zum Zurückdrehen</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="flip-card group" data-flip>
-        <div class="flip-inner rounded-3xl border border-white/10 bg-white/5 p-7 shadow-xl">
-          <div class="flip-face flip-front">
-            <div class="text-4xl font-extrabold text-amber-300">Meister-</div>
-            <div class="mt-2 text-xl font-bold">Ausbildungsbetrieb</div>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-sm text-amber-200">Meisterbetrieb</span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Ausbildung</span>
-              <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-slate-200">Innung</span>
-            </div>
-            <div class="mt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
-          </div>
-
-          <div class="flip-face flip-back">
-            <div class="text-lg font-extrabold text-amber-300">Qualität & Standards</div>
-            <ul class="mt-3 space-y-2 text-slate-200">
-              <li>• Saubere Abnahmen & Dokumentation</li>
-              <li>• Sicherheitsfokus im Team</li>
-              <li>• Verlässliche Ansprechpartner</li>
-            </ul>
-            <div class="mt-6 text-xs text-slate-400">Erneut tippen zum Zurückdrehen</div>
-          </div>
+        <div class="mt-auto pt-6">
+          <div class="h-px bg-white/10"></div>
+          <div class="pt-3 text-sm text-slate-200/80">Tipp: Details jederzeit im Gespräch.</div>
         </div>
       </div>
     </div>
-
   </div>
+
+  <!-- Card 2 -->
+  <div class="flip-card group" data-flip>
+    <div class="flip-inner rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl min-h-[260px]">
+      <div class="flip-face flip-front flex flex-col">
+        <div class="inline-flex self-start px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-200 text-xs font-semibold">
+          Kapazität
+        </div>
+
+        <div class="mt-5 text-5xl font-extrabold text-amber-300 leading-none">50.000 m²</div>
+        <div class="mt-3 text-2xl font-extrabold leading-tight">Material</div>
+        <div class="mt-2 text-slate-300">kurzfristig verfügbar</div>
+
+        <div class="mt-auto pt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
+      </div>
+
+      <div class="flip-face flip-back flex flex-col">
+        <div class="text-xl font-extrabold text-white">Schnell startklar.</div>
+
+        <ul class="mt-4 space-y-3 text-slate-100">
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Große Mengen auf Lager</span></li>
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Flexible Aufbauzeiten</span></li>
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Auch für größere Projekte</span></li>
+        </ul>
+
+        <div class="mt-auto pt-6">
+          <div class="h-px bg-white/10"></div>
+          <div class="pt-3 text-sm text-slate-200/80">Ideal bei engen Zeitplänen.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="flip-card group" data-flip>
+    <div class="flip-inner rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl min-h-[260px]">
+      <div class="flip-face flip-front flex flex-col">
+        <div class="inline-flex self-start px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-200 text-xs font-semibold">
+          Ausstattung
+        </div>
+
+        <div class="mt-5 text-5xl font-extrabold text-amber-300 leading-none">Eigener</div>
+        <div class="mt-3 text-2xl font-extrabold leading-tight">Fuhrpark</div>
+        <div class="mt-2 text-slate-300">Kran · Hebebühnen · LKW</div>
+
+        <div class="mt-auto pt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
+      </div>
+
+      <div class="flip-face flip-back flex flex-col">
+        <div class="text-xl font-extrabold text-white">Mehr Kontrolle.</div>
+
+        <ul class="mt-4 space-y-3 text-slate-100">
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Weniger Abhängigkeiten</span></li>
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Schneller Aufbau & Rückbau</span></li>
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Effiziente Baustellenlogistik</span></li>
+        </ul>
+
+        <div class="mt-auto pt-6">
+          <div class="h-px bg-white/10"></div>
+          <div class="pt-3 text-sm text-slate-200/80">Spart Zeit und Koordination.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="flip-card group" data-flip>
+    <div class="flip-inner rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl min-h-[260px]">
+      <div class="flip-face flip-front flex flex-col">
+        <div class="inline-flex self-start px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-200 text-xs font-semibold">
+          Qualität
+        </div>
+
+        <div class="mt-5 text-5xl font-extrabold text-amber-300 leading-none">Meister-</div>
+        <div class="mt-3 text-2xl font-extrabold leading-tight">Betrieb</div>
+        <div class="mt-2 text-slate-300">Ausbildung · Innung</div>
+
+        <div class="mt-auto pt-6 text-xs text-slate-400 md:hidden">Tippen für mehr</div>
+      </div>
+
+      <div class="flip-face flip-back flex flex-col">
+        <div class="text-xl font-extrabold text-white">Standards & Nachwuchs.</div>
+
+        <ul class="mt-4 space-y-3 text-slate-100">
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Fachlich sauber umgesetzt</span></li>
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Dokumentation & Abnahme</span></li>
+          <li class="flex gap-3"><span class="text-amber-300">•</span><span>Langfristige Qualität</span></li>
+        </ul>
+
+        <div class="mt-auto pt-6">
+          <div class="h-px bg-white/10"></div>
+          <div class="pt-3 text-sm text-slate-200/80">Vertrauen durch Struktur.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
+        
+
 
 <!-- Leistungen (Premium + Akkordeon) -->
 <section id="leistungen" class="py-20 bg-slate-950">
